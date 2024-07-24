@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "service2"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pytest = "*"
+
+# Depend on local libB
+libB = {path = "../../Libraries/libB", develop = true}
+
+# Override the version of external dependency flask
+flask = "^2.0"
+werkzeug = "^2.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

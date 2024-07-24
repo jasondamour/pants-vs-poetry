@@ -1,0 +1,21 @@
+[GLOBAL]
+pants_version = "2.21.0"
+backend_packages = [
+  "pants.backend.python",
+]
+
+[source]
+marker_filenames = ["pyproject.toml"]
+
+[python]
+interpreter_constraints = ['==3.10.*']
+enable_resolves = true
+
+[python.resolves]
+libA = "Libraries/libA/pants.lock"
+libB = "Libraries/libB/pants.lock"
+service1 = "Services/service1/pants.lock"
+service2 = "Services/service2/pants.lock"
+
+[python-infer]
+ambiguity_resolution = "by_source_root"
